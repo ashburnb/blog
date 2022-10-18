@@ -6,12 +6,14 @@ app = Flask(__name__)
 # decorator route to home page
 @app.route('/')
 def index():
-	return render_template('index.html')
+	title = 'Brad\'s Blog'
+	return render_template('index.html', title=title)
 
 # decorator route to user page
 @app.route('/user/<name>')
 def user(name):
-	return render_template('user.html', name=name)
+	title = 'User Brad'
+	return render_template('user.html', name=name, title=title)
 
 
 # Invalid URL Error
